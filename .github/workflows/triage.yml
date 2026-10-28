@@ -1,0 +1,29 @@
+# New issue: add needs-triage, thank the reporter, and @-mention the maintainer
+# so GitHub sends a "mentioned" notification (pushed by GitHub Mobile).
+name: Triage new issues
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  issues: write
+
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Label and reply
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          NUMBER: ${{ github.event.issue.number }}
+          BODY: |
+            Thanks for writing this up! We'll read it soon and ask here if we need anything else.
+
+            글 남겨 주셔서 감사합니다. 곧 읽어 보고 더 필요한 내용이 있으면 여기에 여쭤보겠습니다.
+
+            cc @Jeon0976
+        run: |
+          gh issue edit "$NUMBER" --add-label needs-triage
+          gh issue comment "$NUMBER" --body "$BODY"

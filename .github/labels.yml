@@ -1,0 +1,71 @@
+# Label set. GitHub has no native labels file; apply with
+#   gh label create "<name>" --color <color> --description "<description>" --repo Jeon0976/docnest-feedback --force
+# Colors are hex without "#".
+
+# Type (set by the issue forms)
+- name: bug
+  color: d73a4a
+  description: Something isn't working
+- name: enhancement
+  color: 3b6fd8
+  description: Feature request or improvement
+
+# Status (needs-triage is added by .github/workflows/triage.yml)
+- name: needs-triage
+  color: ededed
+  description: New, not looked at yet
+- name: needs-info
+  color: fbca04
+  description: Waiting for details from the reporter
+- name: confirmed
+  color: 0e8a16
+  description: Reproduced or accepted
+- name: fixed
+  color: 1d76db
+  description: Fixed in a released version (closing comment names it)
+- name: duplicate
+  color: cfd3d7
+  description: Already reported
+- name: wontfix
+  color: ffffff
+  description: Not planned
+
+# Area (set by the maintainer)
+- name: "area: shelf"
+  color: c5d6f5
+  description: Side or top shelf, status tab, menu bar icon
+- name: "area: review"
+  color: c5d6f5
+  description: Reading, review layouts, summaries
+- name: "area: library"
+  color: c5d6f5
+  description: Library window, Find a document, comparison
+- name: "area: conversations"
+  color: c5d6f5
+  description: Agent conversations and sending
+- name: "area: capture"
+  color: c5d6f5
+  description: Documents missing, duplicated or attributed to the wrong AI
+- name: "area: settings"
+  color: c5d6f5
+  description: Settings, notifications, sounds, shortcuts
+- name: "area: install"
+  color: c5d6f5
+  description: Install, launch, permissions, uninstall
+
+# AI tool (matches the bug form's dropdown)
+- name: "agent: claude-code"
+  color: e8e1d6
+  description: Claude Code or the Claude desktop app
+- name: "agent: codex"
+  color: e8e1d6
+  description: Codex CLI or app
+- name: "agent: gemini"
+  color: e8e1d6
+  description: Gemini CLI
+- name: "agent: aside"
+  color: e8e1d6
+  description: Aside
+- name: "agent: other"
+  color: e8e1d6
+  description: Any other AI tool, or a new one to support

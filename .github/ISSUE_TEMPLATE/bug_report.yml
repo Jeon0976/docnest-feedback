@@ -1,0 +1,108 @@
+# Field ids app-version, macos-version and mac-model are prefilled by the Docnest app
+# (issues/new?template=bug_report.yml&app-version=…&macos-version=…&mac-model=…). Keep them stable.
+name: Bug report · 버그 제보
+description: Something in Docnest isn't working · Docnest가 이상하게 동작할 때
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for telling us. Only the first box is required, so skip anything you don't know.
+
+        제보해 주셔서 감사합니다. 첫 칸만 채우시면 됩니다. 모르는 칸은 비워 두세요.
+
+        > **Issues are public — don't paste document contents, license keys or secrets.**
+        >
+        > **이슈는 누구나 볼 수 있습니다. 문서 내용, 이용권 코드, 비밀 값은 붙여 넣지 마세요.**
+
+        Can't describe the bug without private details? Email **hello@sanmarustudio.com**. Found a security problem? [Report it privately](https://github.com/Jeon0976/docnest-feedback/security/advisories/new) instead of opening an issue.
+
+        비공개 자료 없이는 설명하기 어려운 버그라면 **hello@sanmarustudio.com**으로 보내 주세요. 보안 문제는 공개 이슈 대신 [비공개로 제보](https://github.com/Jeon0976/docnest-feedback/security/advisories/new)해 주세요.
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: |
+        What did you do, and what did Docnest do? A sentence or two is enough.
+        무슨 일이 있었나요? 무엇을 했을 때 Docnest가 어떻게 됐는지 한두 문장으로 적어 주시면 됩니다.
+      placeholder: When I open the shelf, Docnest …
+    validations:
+      required: true
+
+  - type: upload
+    id: screenshot
+    attributes:
+      label: Screenshot or screen recording
+      description: |
+        Make sure no document text or file names are showing.
+        스크린샷이나 화면 녹화를 끌어다 놓아 주세요. 문서 내용이나 파일 이름이 보이지 않는지 확인해 주세요.
+    validations:
+      required: false
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: |
+        If you can make it happen again, how?
+        재현 방법을 아시면 순서대로 적어 주세요.
+      placeholder: |
+        1. Ask Claude Code to write a plan
+        2. …
+    validations:
+      required: false
+
+  - type: dropdown
+    id: ai-tool
+    attributes:
+      label: Which AI tool were you using?
+      description: 어떤 AI 도구를 쓰고 계셨나요?
+      multiple: true
+      options:
+        - Claude Code
+        - Codex
+        - Gemini CLI
+        - Aside
+        - Other
+    validations:
+      required: false
+
+  - type: input
+    id: app-version
+    attributes:
+      label: Docnest version
+      description: Settings → About · 설정 → 정보
+      placeholder: "0.8.0 (9)"
+    validations:
+      required: false
+
+  - type: input
+    id: macos-version
+    attributes:
+      label: macOS version
+      description: Apple menu → About This Mac · Apple 메뉴 → 이 Mac에 관하여
+      placeholder: "macOS 15.3.2"
+    validations:
+      required: false
+
+  - type: input
+    id: mac-model
+    attributes:
+      label: Mac model
+      description: Not the serial number · 일련번호는 적지 마세요.
+      placeholder: "MacBook Air M2"
+    validations:
+      required: false
+
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Diagnostics
+      description: |
+        Settings → Advanced → Diagnostics → Copy diagnostics, then paste here. It contains no document contents.
+        설정 → 고급 → 진단 → 진단 복사를 누른 뒤 여기에 붙여 넣으세요. 문서 내용은 들어 있지 않습니다.
+      render: text
+    validations:
+      required: false

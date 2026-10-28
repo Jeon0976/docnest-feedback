@@ -1,0 +1,43 @@
+name: Feature request · 기능 제안
+description: Suggest something Docnest should do · Docnest에 바라는 기능이 있을 때
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Ideas are welcome. Only the first box is required.
+
+        어떤 아이디어든 반갑습니다. 첫 칸만 채우시면 됩니다.
+
+        > **Issues are public — don't paste document contents, license keys or secrets.**
+        >
+        > **이슈는 누구나 볼 수 있습니다. 문서 내용, 이용권 코드, 비밀 값은 붙여 넣지 마세요.**
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to do?
+      description: |
+        Tell us what got in the way. That helps more than a finished design.
+        무엇을 하려다 어디서 막혔는지 알려 주세요. 완성된 해결책보다 그쪽이 더 도움이 됩니다.
+      placeholder: When my agents write several plans at once, I …
+    validations:
+      required: true
+
+  - type: textarea
+    id: idea
+    attributes:
+      label: How should it work?
+      description: 어떻게 되면 좋을지 떠오르는 대로 적어 주세요.
+    validations:
+      required: false
+
+  - type: input
+    id: app-version
+    attributes:
+      label: Docnest version
+      description: Settings → About · 설정 → 정보
+      placeholder: "0.8.0 (9)"
+    validations:
+      required: false
